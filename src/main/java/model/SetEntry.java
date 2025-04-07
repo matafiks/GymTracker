@@ -1,6 +1,6 @@
 package model;
 
-// Class containing data related to single set of certain Exercise
+// Data related to single set of certain Exercise
 
 public class SetEntry {
 

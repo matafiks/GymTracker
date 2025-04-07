@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Class containing whole workout day (all exercises performed that day)
+// Whole workout day (all exercises performed that day)
 
 public class Workout {
 
@@ -13,11 +13,6 @@ public class Workout {
     public Workout(String name) {
         this.name = name;
         this.exercisesList = new ArrayList<>();
-    }
-
-    public void addExercise(Exercise exercise) {
-
-        this.exercisesList.add(exercise);
     }
 
     public String getName() {

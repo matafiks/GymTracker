@@ -1,5 +1,6 @@
 import model.Exercise;
 import model.Workout;
+import service.WorkoutService;
 
 public class Main {
 
@@ -7,29 +8,24 @@ public class Main {
 
         System.out.println("----------Gym tracker----------");
 
+        WorkoutService workoutService = new WorkoutService();
+
         Workout pushDay = new Workout("Push");
 
         Exercise barbellBenchPress = new Exercise("Barbell Bench Press");
-        barbellBenchPress.addSet(50.0, 8);
-        barbellBenchPress.addSet(55.0, 8);
-        barbellBenchPress.addSet(60.0, 8);
-        barbellBenchPress.addSet(62.5, 9);
+        workoutService.addSetToExercise(barbellBenchPress, 60, 8);
+        workoutService.addSetToExercise(barbellBenchPress, 62.5, 8);
+        workoutService.addSetToExercise(barbellBenchPress, 62.5, 8);
+        workoutService.addSetToExercise(barbellBenchPress, 65, 8);
 
         Exercise inclineDumbbellPress = new Exercise("Incline Dumbbell Press");
-        inclineDumbbellPress.addSet(20.0, 8);
-        inclineDumbbellPress.addSet(20.0, 8);
-        inclineDumbbellPress.addSet(20.0, 8);
-        inclineDumbbellPress.addSet(20.0, 8);
+        workoutService.addSetToExercise(inclineDumbbellPress, 20, 8);
+        workoutService.addSetToExercise(inclineDumbbellPress, 22.5, 8);
+        workoutService.addSetToExercise(inclineDumbbellPress, 22.5, 8);
+        workoutService.addSetToExercise(inclineDumbbellPress, 22.5, 8);
 
-        Exercise machineShoulderPress = new Exercise("Machine Shoulder Press");
-        machineShoulderPress.addSet(12.5, 8);
-        machineShoulderPress.addSet(12.5, 8);
-        machineShoulderPress.addSet(12.5, 8);
-        machineShoulderPress.addSet(15.0, 8);
-
-        pushDay.addExercise(barbellBenchPress);
-        pushDay.addExercise(inclineDumbbellPress);
-        pushDay.addExercise(machineShoulderPress);
+        workoutService.addExerciseToWorkout(pushDay, barbellBenchPress);
+        workoutService.addExerciseToWorkout(pushDay, inclineDumbbellPress);
 
         System.out.println(pushDay);
     }

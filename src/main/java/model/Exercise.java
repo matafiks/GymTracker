@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Class containing a name of exercise and all sets performed
+// Name of exercise and all sets performed
 
 public class Exercise {
 
@@ -13,11 +13,6 @@ public class Exercise {
     public Exercise(String name) {
         this.name = name;
         this.sets = new ArrayList<>();
-    }
-
-    public void addSet(double weight, int reps) {
-
-        this.sets.add(new SetEntry(weight, reps));
     }
 
     public String getName() {
