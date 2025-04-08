@@ -1,8 +1,10 @@
+package mainTest;
+
 import model.Exercise;
 import model.Workout;
 import service.WorkoutService;
 
-public class Main {
+public class WorkoutCreationTestMain {
 
     public static void main(String[] args) {
 
@@ -28,5 +30,7 @@ public class Main {
         workoutService.addExerciseToWorkout(pushDay, inclineDumbbellPress);
 
         System.out.println(pushDay);
+
+
     }
 }
