@@ -8,7 +8,7 @@ import java.util.List;
 public class Exercise {
 
     private String name;
-    private List<SetEntry> sets;
+    private List<SingleSet> sets;
 
     public Exercise(String name) {
         this.name = name;
@@ -23,7 +23,7 @@ public class Exercise {
         this.name = name;
     }
 
-    public List<SetEntry> getSets() {
+    public List<SingleSet> getSets() {
         return sets;
     }
 

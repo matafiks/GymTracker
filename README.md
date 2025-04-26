@@ -1,56 +1,58 @@
 # GymTracker
-A console application (future plans: GUI with JavaFX and save to database) to track workouts and monitor progress in the gym. Users can add their daily workouts, exercises, and sets to keep a clear record of their training sessions over time.
+
+**GymTracker** is a Java-based application designed to help users track their workouts and monitor their progress over time. The main goal of this project is to provide an intuitive and flexible tool for recording gym sessions, with a focus on clean data organization, visual progress tracking, and future-proof extensibility.
+
+This project is primarily for learning purposes and is part of my personal portfolio.
 
 ---
 
 ## Features
 
 - **Add Workout Day**  
-  Each workout day consists of one or more exercises, and each exercise can include multiple sets (weight + reps).
-- **Add New Exercises**  
-  Define custom exercises, so you can track exactly what you train.
-- **Display Max**  
-  Display your max (or personal best) lift for a specific exercise.
-- **Future Plans**
-    - Graphical User Interface (JavaFX)
-    - Database integration for persistent data storage
-    - Docker containerization for easier deployment
-    - PDF reports or export options
-    - More detailed statistics (e.g. volume per session, average intensity)
-    - Generate charts or reports showing progress over time.
+  Add full workout sessions, including multiple exercises and sets (weight + repetitions).
+
+- **CSV Import**  
+  Import complete workouts from `.csv` files via an intuitive JavaFX file picker.
+  - Ability to **edit imported data** before saving it to the database.
+
+- **Database Integration**  
+  All workouts and user data are stored locally using a MySQL database for persistent storage.
+
+- **Display Personal Bests**  
+  Easily view your personal record (maximum weight lifted) for any selected exercise.
+
+- **Progress Visualization (Planned)**  
+  Graphical representation of progress over time with charts and graphs, integrated into the JavaFX interface.
+
+- **User-Friendly Interface**  
+  A clean and simple Graphical User Interface (JavaFX) for adding, editing, and managing workouts.
 
 ---
 
-## Roadmap
+## Technologies Used
 
-- [ ] **Basic console interface**
-- [ ] **Add multiple exercises and sets**
-- [ ] **Implement data persistence (file or database)**
-- [ ] **JavaFX interface for better user experience**
-- [ ] **Display charts for progress visualization**
-
----
-
-## Technologies
-
-_Currently Used_:
-- Java (JDK 17)
-- Maven (for build and dependencies)
-
-_In the Future_:
-- JavaFX (GUI)
-- PostgreSQL (database)
-- JUnit (testing)
-- Possibly Docker (containerization)
+- **Java** (JDK 17)
+- **JavaFX** (Graphical User Interface)
+- **MySQL** (Database)
+- **Maven** (Project management and build tool)
+- **JUnit** (Testing framework - planned)
 
 ---
 
-## How to run
-TBA
+## How to Run
+
+Instructions for running the application will be provided soon.  
+Stay tuned!
 
 ---
 
-**This project is primarily for learning purposes and also serves as part of my portfolio.**
+## License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.  
+You are free to view, copy, and use this code for educational and non-commercial purposes only.  
+Commercial use and redistribution are prohibited without explicit permission.
+
+[Learn more about the license here.](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ---
 

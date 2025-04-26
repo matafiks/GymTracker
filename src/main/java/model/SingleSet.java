@@ -2,12 +2,12 @@ package model;
 
 // Data related to single set of certain Exercise
 
-public class SetEntry {
+public class SingleSet {
 
     private double weight;
     private int reps;
 
-    public SetEntry(double weight, int reps) {
+    public SingleSet(int reps, double weight) {
         this.weight = weight;
         this.reps = reps;
     }
@@ -31,7 +31,7 @@ public class SetEntry {
     @Override
     public String toString() {
 
-        return weight + " x " + reps;
+        return reps + " x " + weight;
 
 //        return "SetEntry{" +
 //                "weight=" + weight +
