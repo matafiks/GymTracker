@@ -4,22 +4,20 @@ import model.Workout;
 import service.WorkoutService;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class ReadWorkoutFromCSV {
 
+    // TODO: in future change static paths from resources to chosen by user from GUI
     private static final String pushPath = "src/main/resources/Workout plan - PUSH B.csv";
     private static final String legsPath = "src/main/resources/Workout plan - LEGS B.csv";
+    private static final String pushPath2 = "src/main/resources/Workout plan - PUSH A.csv";
 
     WorkoutService workoutService = new WorkoutService();
 
     public void readWorkoutFromCSVFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(legsPath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(pushPath2))) {
 
             String firstLine = reader.readLine();
             String[] workoutInfo = firstLine.split(",");
@@ -30,14 +28,16 @@ public class ReadWorkoutFromCSV {
             String line;
 
             while ((line = reader.readLine()) != null) {
+
                 String[] exercise = line.split(",");
                 Exercise exerciseName = new Exercise(exercise[0]);
                 workoutService.addExerciseToWorkout(workout, exerciseName);
-                // TODO: zamienić na pętlę tak aby zapobiec występowaniu wyjatku braku setow (niektóre ćwiczenia robię tylko na 3 sety)
                 workoutService.addSetToExercise(exerciseName, exercise[1], exercise[2]);
                 workoutService.addSetToExercise(exerciseName, exercise[3], exercise[4]);
                 workoutService.addSetToExercise(exerciseName, exercise[5], exercise[6]);
-                workoutService.addSetToExercise(exerciseName, exercise[7], exercise[8]);
+                if (exercise.length > 7) {
+                    workoutService.addSetToExercise(exerciseName, exercise[7], exercise[8]);
+                }
             }
 
             System.out.println("Wczytane z pliku ćwiczenie");
