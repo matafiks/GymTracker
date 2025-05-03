@@ -29,11 +29,28 @@ This project is primarily for learning purposes and is part of my personal portf
 
 ---
 
+## Roadmap
+
+- [x] Add Workout Day
+
+- [x] CSV Import
+
+- [ ] Database Integration
+
+- [ ] Display Personal Bests  
+
+- [ ] Progress Visualization
+
+- [ ] User-Friendly Interface  
+
+---
+
 ## Technologies Used
 
 - **Java** (JDK 17)
 - **JavaFX** (Graphical User Interface)
 - **MySQL** (Database)
+- **Hibernate** 
 - **Maven** (Project management and build tool)
 - **JUnit** (Testing framework - planned)
 

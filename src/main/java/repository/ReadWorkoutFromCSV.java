@@ -1,6 +1,6 @@
 package repository;
-import model.Exercise;
-import model.Workout;
+import entity.Exercise;
+import entity.Workout;
 import service.WorkoutService;
 
 import java.io.BufferedReader;
@@ -29,6 +29,7 @@ public class ReadWorkoutFromCSV {
 
             while ((line = reader.readLine()) != null) {
 
+                // TODO: might not work properly if there will be over 5 sets performed, consider fixing this problem
                 String[] exercise = line.split(",");
                 Exercise exerciseName = new Exercise(exercise[0]);
                 workoutService.addExerciseToWorkout(workout, exerciseName);
@@ -42,6 +43,40 @@ public class ReadWorkoutFromCSV {
 
             System.out.println("Wczytane z pliku ćwiczenie");
             System.out.println(workout);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Workout readWorkoutFromCSVFileAndReturn() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(legsPath))) {
+
+            String firstLine = reader.readLine();
+            String[] workoutInfo = firstLine.split(",");
+            Workout workout = new Workout(workoutInfo[0], workoutInfo[1]);
+
+            reader.readLine();
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                // TODO: might not work properly if there will be over 5 sets performed, consider fixing this problem
+                String[] exercise = line.split(",");
+                Exercise exerciseName = new Exercise(exercise[0]);
+                workoutService.addExerciseToWorkout(workout, exerciseName);
+                workoutService.addSetToExercise(exerciseName, exercise[1], exercise[2]);
+                workoutService.addSetToExercise(exerciseName, exercise[3], exercise[4]);
+                workoutService.addSetToExercise(exerciseName, exercise[5], exercise[6]);
+                if (exercise.length > 7) {
+                    workoutService.addSetToExercise(exerciseName, exercise[7], exercise[8]);
+                }
+            }
+
+            return workout;
+
+//            System.out.println("Wczytane z pliku ćwiczenie");
+//            System.out.println(workout);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

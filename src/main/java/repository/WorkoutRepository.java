@@ -1,6 +1,6 @@
 package repository;
 
-import model.Workout;
+import entity.Workout;
 
 public class WorkoutRepository {
 

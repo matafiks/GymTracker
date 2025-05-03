@@ -1,7 +1,7 @@
 package mainTest;
 
-import model.Exercise;
-import model.Workout;
+import entity.Exercise;
+import entity.Workout;
 import service.WorkoutService;
 
 public class WorkoutCreationTestMain {
