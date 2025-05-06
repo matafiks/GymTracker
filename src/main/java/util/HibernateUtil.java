@@ -9,7 +9,7 @@ public class HibernateUtil {
 
     static {
         try {
-            // Wczytuje konfigurację z hibernate.cfg.xml z resources/
+            // Reads configuration from hibernate.cfg.xml from resources/
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Exception ex) {
             throw new ExceptionInInitializerError("Error creating SessionFactory: " + ex);

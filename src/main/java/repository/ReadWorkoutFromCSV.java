@@ -10,9 +10,10 @@ import java.io.IOException;
 public class ReadWorkoutFromCSV {
 
     // TODO: in future change static paths from resources to chosen by user from GUI
-    private static final String pushPath = "src/main/resources/Workout plan - PUSH B.csv";
-    private static final String legsPath = "src/main/resources/Workout plan - LEGS B.csv";
-    private static final String pushPath2 = "src/main/resources/Workout plan - PUSH A.csv";
+    private static final String pushPath = "src/main/resources/sample_workouts/Workout plan - PUSH B.csv";
+    private static final String legsPath = "src/main/resources/sample_workouts/Workout plan - LEGS B.csv";
+    private static final String pushPath2 = "src/main/resources/sample_workouts/Workout plan - PUSH A.csv";
+    private static final String pullPath = "src/main/resources/sample_workouts/Workout plan - PULL A.csv";
 
     WorkoutService workoutService = new WorkoutService();
 
@@ -32,12 +33,10 @@ public class ReadWorkoutFromCSV {
                 // TODO: might not work properly if there will be over 5 sets performed, consider fixing this problem
                 String[] exercise = line.split(",");
                 Exercise exerciseName = new Exercise(exercise[0]);
-                workoutService.addExerciseToWorkout(workout, exerciseName);
-                workoutService.addSetToExercise(exerciseName, exercise[1], exercise[2]);
-                workoutService.addSetToExercise(exerciseName, exercise[3], exercise[4]);
-                workoutService.addSetToExercise(exerciseName, exercise[5], exercise[6]);
-                if (exercise.length > 7) {
-                    workoutService.addSetToExercise(exerciseName, exercise[7], exercise[8]);
+                for (int i = 1; i < exercise.length; i+=2) {
+                    if (exercise[i] != null) {
+                        workoutService.addSetToExercise(exerciseName, exercise[i], exercise[i+1]);
+                    }
                 }
             }
 
@@ -49,7 +48,7 @@ public class ReadWorkoutFromCSV {
     }
 
     public Workout readWorkoutFromCSVFileAndReturn() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(legsPath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(pullPath))) {
 
             String firstLine = reader.readLine();
             String[] workoutInfo = firstLine.split(",");
@@ -61,15 +60,14 @@ public class ReadWorkoutFromCSV {
 
             while ((line = reader.readLine()) != null) {
 
-                // TODO: might not work properly if there will be over 5 sets performed, consider fixing this problem
                 String[] exercise = line.split(",");
                 Exercise exerciseName = new Exercise(exercise[0]);
                 workoutService.addExerciseToWorkout(workout, exerciseName);
-                workoutService.addSetToExercise(exerciseName, exercise[1], exercise[2]);
-                workoutService.addSetToExercise(exerciseName, exercise[3], exercise[4]);
-                workoutService.addSetToExercise(exerciseName, exercise[5], exercise[6]);
-                if (exercise.length > 7) {
-                    workoutService.addSetToExercise(exerciseName, exercise[7], exercise[8]);
+
+                for (int i = 1; i < exercise.length; i+=2) {
+                    if (exercise[i] != null) {
+                        workoutService.addSetToExercise(exerciseName, exercise[i], exercise[i+1]);
+                    }
                 }
             }
 

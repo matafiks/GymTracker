@@ -4,21 +4,23 @@
 
 <hibernate-configuration>
     <session-factory>
-        <!-- Konfiguracja połączenia z MySQL -->
+        <!-- Setting up connection to MySQL DB -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gymtracker?useSSL=false&amp;serverTimezone=UTC</property>
         <property name="hibernate.connection.username">gymbro</property>
         <property name="hibernate.connection.password">gymbro</property>
 
-        <!-- Dialekt dla MySQL -->
+        <!-- Dialect for MySQL -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-        <!-- Ustawienia Hibernate -->
+        <!-- Hibernate Settings -->
+        <!-- Only update already existing database-->
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Display sql when writing data to db -->
 <!--        <property name="hibernate.show_sql">true</property>-->
 <!--        <property name="hibernate.format_sql">true</property>-->
 
-        <!-- Dodaj klasy encji -->
+        <!-- Entity classes -->
         <mapping class="entity.Exercise"/>
         <mapping class="entity.SingleSet"/>
         <mapping class="entity.Workout"/>

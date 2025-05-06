@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// Name of exercise and all sets performed
+// Entity class for Exercises
 
 @Entity
 @Table(name = "exercise")

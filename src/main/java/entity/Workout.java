@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-// Whole workout day (all exercises performed that day)
+// Entity class for Workout (combined of exercises and sets performed on a certain day)
 
 @Entity
 @Table(name="workout")
@@ -32,6 +32,7 @@ public class Workout {
 
     public Workout(String workoutType, String date) {
         this.workoutType = workoutType;
+        // used a dtf to ensure proper date formatting for database storage
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.date = LocalDate.parse(date, formatter);
         this.exercisesList = new ArrayList<>();

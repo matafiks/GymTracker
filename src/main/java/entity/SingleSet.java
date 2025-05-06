@@ -1,8 +1,9 @@
 package entity;
 
-// Data related to single set of certain Exercise
 
 import jakarta.persistence.*;
+
+// Entity class for SingleSet
 
 @Entity
 @Table(name = "single_set")
