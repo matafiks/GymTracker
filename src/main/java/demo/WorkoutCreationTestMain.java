@@ -1,4 +1,4 @@
-package mainTest;
+package demo;
 
 import entity.Exercise;
 import entity.Workout;

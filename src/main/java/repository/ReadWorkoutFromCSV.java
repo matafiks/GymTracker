@@ -30,7 +30,6 @@ public class ReadWorkoutFromCSV {
 
             while ((line = reader.readLine()) != null) {
 
-                // TODO: might not work properly if there will be over 5 sets performed, consider fixing this problem
                 String[] exercise = line.split(",");
                 Exercise exerciseName = new Exercise(exercise[0]);
                 for (int i = 1; i < exercise.length; i+=2) {
@@ -72,9 +71,6 @@ public class ReadWorkoutFromCSV {
             }
 
             return workout;
-
-//            System.out.println("Wczytane z pliku ćwiczenie");
-//            System.out.println(workout);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

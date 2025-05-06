@@ -19,4 +19,6 @@ module GymTracker {
     exports repository;
     exports service;
     exports util;
+    exports ui.controller;
+    opens ui.controller to javafx.fxml;
 }

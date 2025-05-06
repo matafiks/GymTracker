@@ -1,9 +1,9 @@
-package ui;
+package ui.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class SampleController {
+public class MainController {
 
     @FXML
     private Label welcomeText;

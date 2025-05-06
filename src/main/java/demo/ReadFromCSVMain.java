@@ -1,4 +1,4 @@
-package mainTest;
+package demo;
 
 import repository.ReadWorkoutFromCSV;
 

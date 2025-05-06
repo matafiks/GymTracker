@@ -2,11 +2,7 @@ package repository;
 
 import entity.Workout;
 
-public class WorkoutRepository {
+public interface WorkoutRepository {
 
-    public void saveWorkout(Workout workout) {
-        // TODO: implement
-        // save workout to database
-    }
-
+    void save(Workout workout);
 }
