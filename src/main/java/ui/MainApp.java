@@ -13,7 +13,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/javafx_ui/mainWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/javafx_ui/main_window.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 800);
 
         stage.setTitle("Gym Tracker");

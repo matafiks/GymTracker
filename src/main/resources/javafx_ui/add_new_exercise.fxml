@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controller.AddNewExerciseController"
+            spacing="15" alignment="TOP_LEFT" style="-fx-padding: 20;">
+
+    <Label text="Dodaj ćwiczenie" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+
+    <!-- ComboBox + pole tekstowe -->
+    <HBox spacing="10">
+        <Label text="Ćwiczenie:"/>
+        <ComboBox fx:id="exerciseComboBox" prefWidth="180"/>
+        <TextField fx:id="customExerciseField" promptText="Nowe ćwiczenie" disable="true"/>
+    </HBox>
+
+    <!-- Tabela serii -->
+    <TableView fx:id="seriesTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="weightCol" text="Ciężar (kg)"/>
+            <TableColumn fx:id="repsCol" text="Powtórzenia"/>
+        </columns>
+    </TableView>
+
+    <!-- Dodawanie/Usuwanie serii -->
+    <HBox spacing="10">
+        <Button text="+ Dodaj serię" onAction="#handleAddSeries"/>
+        <Button text="- Usuń zaznaczoną" onAction="#handleRemoveSeries"/>
+    </HBox>
+
+    <!-- Przyciski główne -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Zapisz" onAction="#handleSave"/>
+        <Button text="Anuluj" onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

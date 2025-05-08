@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ui.controller.DashboardController"
+      spacing="15" alignment="TOP_LEFT" style="-fx-padding: 20;">
+
+    <Label text="Strona główna" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+</VBox>

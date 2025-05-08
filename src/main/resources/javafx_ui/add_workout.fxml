@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controller.AddWorkoutController"
+            spacing="15" alignment="TOP_LEFT" style="-fx-padding: 20;">
+
+    <Label text="Dodaj nowy trening" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10">
+        <DatePicker fx:id="workoutDatePicker" promptText="Wybierz datę treningu"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Rodzaj treningu:"/>
+        <ChoiceBox fx:id="trainingTypeChoiceBox"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Ćwiczenie:"/>
+        <TextField fx:id="exerciseField" promptText="np. Przysiad"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Serie:"/>
+        <Spinner fx:id="setsSpinner" prefWidth="80"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Ciężar (kg):"/>
+        <TextField fx:id="weightField"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Powtórzenia:"/>
+        <TextField fx:id="repsField"/>
+    </HBox>
+
+    <Button text="Dodaj ćwiczenie" onAction="#handleAddNewExercise"/>
+
+    <Button text="Zapisz ćwiczenie" onAction="#handleSaveExercise"/>
+
+</VBox>

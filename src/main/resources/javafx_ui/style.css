@@ -1,0 +1,44 @@
+#leftPanel {
+    -fx-background-color: #DCDCDC;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+}
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 1, 0, 0, 1);
+    -fx-font-weight: normal;
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-width: 200px;
+}
+
+.button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.button.active {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+}

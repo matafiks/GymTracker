@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.MainController">
+
+    <left>
+        <VBox id="leftPanel" fx:id="leftPanel">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="GymTracker" />
+
+            <Button fx:id="mainPageButton" text="Strona główna"/>
+            <Button fx:id="addWorkoutButton" text="Dodaj trening" />
+            <Button fx:id="importWorkoutButton" text="Importuj trening" />
+            <Button fx:id="personalBestsButton" text="Osobiste rekordy" />
+            <Button fx:id="progressGraphsButton" text="Wykresy" />
+
+            <Pane VBox.vgrow="always" />
+
+            <Label style="-fx-font-size: 12px; -fx-font-weight: bold;" text="© Maciej Kierys" />
+        </VBox>
+    </left>
+
+    <center>
+        <GridPane fx:id="mainContent" hgap="10" vgap="10">
+
+        </GridPane>
+
+    </center>
+
+</BorderPane>
